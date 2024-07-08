@@ -21,89 +21,124 @@
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
-    Report for Jeremy Robson Daily Weekly Monthly Work 5hrs
-    <!-- daily -->
-    Previous - 7hrs
-    <!-- daily -->
-    32hrs
-    <!-- weekly -->
-    Previous - 36hrs
-    <!-- weekly -->
-    103hrs
-    <!-- monthly -->
-    Previous - 128hrs
-    <!-- monthly -->
+    <div class="container">
+      <header class="user-report">
+        <h1 class="report-title">
+          <span class="title-intro">Report for</span>
+          Jeremy Robson
+        </h1>
+        <nav class="timeframes">
+          <button id="daily">Daily</button>
+          <button id="weekly">Weekly</button>
+          <button id="monthly">Monthly</button>
+        </nav>
+      </header>
+      <main class="report-cards">
+        <section class="report-card" id="work-card">
+          <header class="card-intro">
+            <h2 class="card-title">Work</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">5hrs</p>
+            <p class="weekly">32hrs</p>
+            <p class="monthly">103hrs</p>
+          </div>
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 7hrs</p>
+            <p class="weekly">Last Week - 36hrs</p>
+            <p class="monthly">Last Month - 128hrs</p>
+          </footer>
+        </section>
+        <section class="report-card" id="play-card">
+          <header class="card-intro">
+            <h2 class="card-title">Play</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">1hr</p>
+            <p class="weekly">10 hrs</p>
+            <p class="monthly">23hrs</p>
+          </div>
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 2hrs</p>
+            <p class="weekly">Last Week - 8hrs</p>
+            <p class="monthly">Last Month - 29hrs</p>
+          </footer>
+        </section>
+        <section class="report-card" id="study-card">
+          <header class="card-intro">
+            <h2 class="card-title">Study</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">0hrs</p>
+            <p class="weekly">4hrs</p>
+            <p class="monthly">13hrs</p>
+          </div>
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 1hr</p>
+            <p class="weekly">Last Week - 7hrs</p>
+            <p class="monthly">Last Month - 19hrs</p>
+          </footer>
+        </section>
+        <section class="report-card" id="exercise-card">
+          <header class="card-intro">
+            <h2 class="card-title">Exercise</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">1hr</p>
+            <p class="weekly">4hrs</p>
+            <p class="monthly">11hrs</p>
+          </div>
 
-    Play 1hr
-    <!-- daily -->
-    Previous - 2hrs
-    <!-- daily -->
-    10hrs
-    <!-- weekly -->
-    Previous - 8hrs
-    <!-- weekly -->
-    23hrs
-    <!-- monthly -->
-    Previous - 29hrs
-    <!-- monthly -->
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 1hr</p>
+            <p class="weekly">Last Week - 5hrs</p>
+            <p class="monthly">Last Month - 18hrs</p>
+          </footer>
+        </section>
+        <section class="report-card" id="social-card">
+          <header class="card-intro">
+            <h2 class="card-title">Social</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">1hr</p>
+            <p class="weekly">5hrs</p>
+            <p class="monthly">21hrs</p>
+          </div>
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 3hrs</p>
+            <p class="weekly">Last Week - 10hrs</p>
+            <p class="monthly">Last Month - 23hrs</p>
+          </footer>
+        </section>
+        <section class="report-card" id="self-care-card">
+          <header class="card-intro">
+            <h2 class="card-title">Self Care</h2>
+            <a class="more-info" href="#">...</a>
+          </header>
+          <div class="current-timeframes">
+            <p class="daily">0hrs</p>
+            <p class="weekly">2hrs</p>
+            <p class="monthly">7hrs</p>
+          </div>
+          <footer class="previous-timeframes">
+            <p class="daily">Yesterday - 1hr</p>
+            <p class="weekly">Last Week - 2hrs</p>
+            <p class="monthly">Last Month - 11hrs</p>
+          </footer>
+        </section>
+      </main>
 
-    Study 0hrs
-    <!-- daily -->
-    Previous - 1hr
-    <!-- daily -->
-    4hrs
-    <!-- weekly -->
-    Previous - 7hrs
-    <!-- weekly -->
-    13hrs
-    <!-- monthly -->
-    Previous - 19hrs
-    <!-- monthly -->
-
-    Exercise 1hr
-    <!-- daily -->
-    Previous - 1hr
-    <!-- daily -->
-    4hrs
-    <!-- weekly -->
-    Previous - 5hrs
-    <!-- weekly -->
-    11hrs
-    <!-- monthly -->
-    Previous - 18hrs
-    <!-- monthly -->
-
-    Social 1hr
-    <!-- daily -->
-    Previous - 3hrs
-    <!-- daily -->
-    5hrs
-    <!-- weekly -->
-    Previous - 10hrs
-    <!-- weekly -->
-    21hrs
-    <!-- monthly -->
-    Previous - 23hrs
-    <!-- monthly -->
-
-    Self Care 0hrs
-    <!-- daily -->
-    Previous - 1hr
-    <!-- daily -->
-    2hrs
-    <!-- weekly -->
-    Previous - 2hrs
-    <!-- weekly -->
-    7hrs
-    <!-- monthly -->
-    Previous - 11hrs
-    <!-- monthly -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </footer>
     </div>
 
     <script src="scripts.js"></script>
