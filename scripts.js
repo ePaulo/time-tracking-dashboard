@@ -31,6 +31,21 @@ fetch('data.json')
 function displayTrackingData(trackingData, timeframe) {
   if (!trackingData) return
 
+  const abbrHours = hours => (hours < 1 ? '' : hours > 1 ? 'hrs' : 'hr')
+
+  const prefixPreviousTime = timeframe => {
+    switch (timeframe) {
+      case 'daily':
+        return 'Yesterday'
+      case 'weekly':
+        return 'Last Week'
+      case 'monthly':
+        return 'Last Month'
+      default:
+        return ''
+    }
+  }
+
   const displayContent = trackingData
     .map(dataSet => {
       const { title, timeframes } = dataSet
@@ -43,26 +58,11 @@ function displayTrackingData(trackingData, timeframe) {
         </header>
       `
 
-      const abbrHours = hours => (hours < 1 ? '' : hours > 1 ? 'hrs' : 'hr')
-
       const currentTimeframe = `
         <div class="current-timeframes">
           <p class=${timeframe}>${current}${abbrHours(current)}</p>
         </div>
       `
-
-      const prefixPreviousTime = timeframe => {
-        switch (timeframe) {
-          case 'daily':
-            return 'Yesterday'
-          case 'weekly':
-            return 'Last Week'
-          case 'monthly':
-            return 'Last Month'
-          default:
-            return ''
-        }
-      }
 
       const previousTimeframe = `
         <footer class="previous-timeframes">
