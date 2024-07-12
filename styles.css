@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px dashed red;
+  outline: 1px dashed pink;
 }
 
 :root {
+  --color-white: hsl(0, 0%, 100%);
   --color-blue: hsl(246, 80%, 60%);
   --color-dark-blue: hsl(235, 46%, 20%);
   --color-very-dark-blue: hsl(226, 43%, 10%);
@@ -27,11 +28,125 @@ html {
 }
 
 body {
+  /* background-color: var(--color-very-dark-blue); */
   font-family: 'Rubik', sans-serif;
   font-size: 1.8rem;
-  line-height: 1.6;
+  font-weight: 400;
 }
 
+/* ====== MEDIA STYLING ===== */
+div.app-container {
+  width: 375px;
+  margin: 8rem auto;
+  padding: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Media Header ----- */
+header.time-tracking-user {
+  width: 100%;
+  background-color: var(--color-dark-blue);
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  div.user-intro {
+    padding: 3.5rem 0 3.2rem 3.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-blue);
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+
+    img.user-avatar {
+      width: 6.4rem;
+      height: 6.4rem;
+      border-radius: 50%;
+      border: 3px solid var(--color-white);
+      display: inline-block;
+    }
+
+    h1.user-title {
+      font-size: 2.4rem;
+      font-weight: 300;
+      display: inline-block;
+
+      span.smaller-font {
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: block;
+      }
+    }
+  }
+
+  nav.timeframes {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-around;
+
+    button.timeframe {
+      color: var(--color-desaturated-blue);
+      border: none;
+      background: transparent;
+      font-size: inherit;
+
+      &.selected-btn {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+/* ----- Media Main ----- */
+main.time-tracking-cards {
+  width: 100%;
+  background-color: var(--color-dark-blue);
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  section.tracking-card {
+    &#work {
+      background-color: var(--color-work--light-red);
+      background-image: url(images/icon-work.svg);
+      /* place one instance of image in upper right corner */
+      background-repeat: no-repeat;
+      background-position: 90% 10%;
+    }
+
+    header.card-intro {
+      background-color: var(--color-dark-blue);
+
+      h2.card-title {
+        color: var(--color-white);
+      }
+      img.ellipsis-icon {
+        width: 21px;
+        height: 5px;
+      }
+    }
+
+    div.current-timeframe {
+      color: var(--color-white);
+    }
+
+    footer.previous-timeframe {
+      color: var(--color-desaturated-blue);
+    }
+  }
+}
+
+/* ----- Attribute Footer ----- */
 footer.attribution {
   font-size: 11px;
   text-align: center;

@@ -46,6 +46,10 @@ function displayTrackingData(trackingData, timeframe) {
     }
   }
 
+  const idTitle = title => {
+    return title.toLowerCase().trim().replace(' ', '-')
+  }
+
   const displayContent = trackingData
     .map(dataSet => {
       const { title, timeframes } = dataSet
@@ -54,18 +58,18 @@ function displayTrackingData(trackingData, timeframe) {
       const cardTitle = `
         <header class="card-intro">
           <h2 class="card-title">${title}</h2>
-          <a class="more-info" href="#">...</a>
+          <img class="ellipsis-icon" src="images/icon-ellipsis.svg" alt="ellipsis" />
         </header>
       `
 
       const currentTimeframe = `
-        <div class="current-timeframes">
+        <div class="current-timeframe">
           <p class=${timeframe}>${current}${abbrHours(current)}</p>
         </div>
       `
 
       const previousTimeframe = `
-        <footer class="previous-timeframes">
+        <footer class="previous-timeframe">
           <p class=${timeframe}>
             ${prefixPreviousTime(timeframe)} - ${previous}${abbrHours(previous)}
           </p>
@@ -73,7 +77,8 @@ function displayTrackingData(trackingData, timeframe) {
       `
 
       return `
-              <section class="report-card" id=${title}>
+              <section class="tracking-card" id=${idTitle(title)}>
+                
                 ${cardTitle}
                 ${currentTimeframe}
                 ${previousTimeframe}

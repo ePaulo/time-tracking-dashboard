@@ -22,18 +22,25 @@
   </head>
   <body>
     <div class="app-container">
-      <header class="user-report">
-        <h1 class="report-title">
-          <span class="title-intro">Report for</span>
-          Jeremy Robson
-        </h1>
+      <header class="time-tracking-user">
+        <div class="user-intro">
+          <img
+            src="./images/image-jeremy.png"
+            alt="Jeremy Robson"
+            class="user-avatar"
+          />
+          <h1 class="user-title">
+            <span class="smaller-font">Report for</span>
+            Jeremy Robson
+          </h1>
+        </div>
         <nav class="timeframes">
-          <button id="daily-btn">Daily</button>
-          <button id="weekly-btn">Weekly</button>
-          <button id="monthly-btn">Monthly</button>
+          <button class="timeframe" id="daily-btn">Daily</button>
+          <button class="timeframe selected-btn" id="weekly-btn">Weekly</button>
+          <button class="timeframe" id="monthly-btn">Monthly</button>
         </nav>
       </header>
-      <main class="time-tracking-content" id="tracking-content"></main>
+      <main class="time-tracking-cards" id="tracking-content"></main>
 
       <footer class="attribution">
         Challenge by
