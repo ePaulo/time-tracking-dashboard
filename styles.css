@@ -225,11 +225,56 @@ main.time-tracking-cards {
 /* ========================== */
 /* ====== LARGE SCREENS ===== */
 /* ========================== */
+/* add media query for larger screens */
+@media (min-width: 768px) {
+  div.app-container {
+    width: 1110px;
+    height: 518px;
+
+    flex-direction: row;
+    align-items: start;
+  }
+
+  /* ===== Header [desktop] ===== */
+  header.time-tracking-user {
+    width: 255px;
+    height: 100%;
+
+    /* ----- User Intro [desktop] ----- */
+    div.user-intro {
+      height: 354px;
+      padding: 2.8rem 2.5rem;
+
+      flex-direction: column;
+      align-items: start;
+      gap: 3.3rem;
+
+      img.user-avatar {
+        width: 7.8rem;
+        height: 7.8rem;
+      }
+
+      h1.user-title {
+        font-size: 3.2rem;
+        line-height: 1.25;
+      }
+    }
+
+    /* ----- Timeframes Nav [desktop] ----- */
+    nav.timeframes {
+      padding: 2.5rem;
+      flex-direction: column;
+      align-items: start;
+      gap: 2rem;
+    }
+  }
+}
 
 /* ========================== */
 /* ====== SHARED FOOTER ===== */
 /* ========================== */
 footer.attribution {
+  margin-bottom: 1em;
   font-size: 1rem;
   color: var(--color-pale-blue);
   text-align: center;
