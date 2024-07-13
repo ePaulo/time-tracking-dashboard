@@ -69,10 +69,10 @@ function displayTrackingData(trackingData, timeframe) {
       const { current, previous } = timeframes[timeframe]
 
       const cardTitle = `
-        <header class="card-intro">
+        <div class="card-intro">
           <h2 class="card-title">${title}</h2>
           <img class="ellipsis-icon" src="images/icon-ellipsis.svg" alt="ellipsis" />
-        </header>
+        </div>
       `
 
       const currentTimeframe = `
@@ -82,11 +82,11 @@ function displayTrackingData(trackingData, timeframe) {
       `
 
       const previousTimeframe = `
-        <footer class="previous-timeframe">
+        <div class="previous-timeframe">
           <p class=${timeframe}>
             ${prefixPreviousTime(timeframe)} - ${previous}${abbrHours(previous)}
           </p>
-        </footer>
+        </div>
       `
 
       return `
