@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px dashed pink;
+  /* outline: 1px dashed pink; */
 }
 
 :root {
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  /* background-color: var(--color-very-dark-blue); */
+  background-color: var(--color-very-dark-blue);
   font-family: 'Rubik', sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
@@ -37,7 +37,7 @@ body {
 /* ====== MEDIA STYLING ===== */
 div.app-container {
   width: 375px;
-  margin: 8rem auto;
+  margin: 5.6rem auto 2rem;
   padding: 2.4rem;
 
   display: flex;
@@ -75,11 +75,14 @@ header.time-tracking-user {
     }
 
     h1.user-title {
+      color: var(--color-white);
       font-size: 2.4rem;
       font-weight: 300;
+      line-height: 1.4;
       display: inline-block;
 
       span.smaller-font {
+        color: var(--color-pale-blue);
         font-size: 1.5rem;
         font-weight: 400;
         display: block;
@@ -88,7 +91,7 @@ header.time-tracking-user {
   }
 
   nav.timeframes {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     display: flex;
     justify-content: space-around;
 
@@ -97,6 +100,11 @@ header.time-tracking-user {
       border: none;
       background: transparent;
       font-size: inherit;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-white);
+      }
 
       &.selected-btn {
         color: var(--color-white);
@@ -108,50 +116,106 @@ header.time-tracking-user {
 /* ----- Media Main ----- */
 main.time-tracking-cards {
   width: 100%;
-  background-color: var(--color-dark-blue);
-  border-radius: 1.5rem;
+  /* background-color: var(--color-very-dark-blue); */
+  /* border-radius: 1.5rem; */
 
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 
   section.tracking-card {
+    border-radius: 1.5rem;
+    background-repeat: no-repeat;
+
     &#work {
       background-color: var(--color-work--light-red);
       background-image: url(images/icon-work.svg);
-      /* place one instance of image in upper right corner */
-      background-repeat: no-repeat;
-      background-position: 90% 10%;
+      background-position: 93% -14%;
     }
 
-    header.card-intro {
+    &#play {
+      background-color: var(--color-play--soft-blue);
+      background-image: url(images/icon-play.svg);
+      background-position: 92% -6%;
+    }
+
+    &#study {
+      background-color: var(--color-study--light-red);
+      background-image: url(images/icon-study.svg);
+      background-position: 93% -10%;
+    }
+
+    &#exercise {
+      background-color: var(--color-exercise--lime-green);
+      background-image: url(images/icon-exercise.svg);
+      background-position: 93% -1%;
+    }
+
+    &#social {
+      background-color: var(--color-social--violet);
+      background-image: url(images/icon-social.svg);
+      background-position: 93% -25%;
+    }
+
+    &#self-care {
+      background-color: var(--color-self-care--soft-orange);
+      background-image: url(images/icon-self-care.svg);
+      background-position: 95% -12%;
+    }
+
+    div.card-content {
+      height: 12rem;
+      margin-top: 3.8rem;
+      padding: 2.8rem 2.4rem;
+      border-radius: 1.5rem;
+
       background-color: var(--color-dark-blue);
 
-      h2.card-title {
-        color: var(--color-white);
-      }
-      img.ellipsis-icon {
-        width: 21px;
-        height: 5px;
-      }
-    }
+      header.card-intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    div.current-timeframe {
-      color: var(--color-white);
-    }
+        h2.card-title {
+          font-size: 1.8rem;
+          font-weight: 500;
 
-    footer.previous-timeframe {
-      color: var(--color-desaturated-blue);
+          color: var(--color-white);
+        }
+        img.ellipsis-icon {
+          width: 21px;
+          height: 5px;
+        }
+      }
+
+      div.timeframes {
+        margin-top: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div.current-timeframe {
+          font-size: 3.2rem;
+          font-weight: 300;
+          color: var(--color-white);
+        }
+
+        footer.previous-timeframe {
+          font-size: 1.5rem;
+          color: var(--color-desaturated-blue);
+        }
+      }
     }
   }
 }
 
 /* ----- Attribute Footer ----- */
 footer.attribution {
-  font-size: 11px;
+  font-size: 1rem;
+  color: var(--color-pale-blue);
   text-align: center;
 
   a {
-    color: hsl(228, 45%, 44%);
+    color: var(--color-desaturated-blue);
   }
 }

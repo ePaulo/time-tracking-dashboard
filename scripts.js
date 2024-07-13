@@ -1,24 +1,29 @@
-// DOM References for time-tracking cards and timeframe buttons
+// DOM References
 const dailyBtn = document.getElementById('daily-btn')
 const weeklyBtn = document.getElementById('weekly-btn')
 const monthlyBtn = document.getElementById('monthly-btn')
 const trackingContent = document.getElementById('tracking-content')
 
-// Event listeners on timeframe buttons
-dailyBtn.addEventListener('click', () =>
+// Event listeners
+dailyBtn.addEventListener('click', () => {
+  setSelectedBtn(dailyBtn)
   displayTrackingData(trackingData, 'daily')
-)
-weeklyBtn.addEventListener('click', () =>
-  displayTrackingData(trackingData, 'weekly')
-)
-monthlyBtn.addEventListener('click', () =>
-  displayTrackingData(trackingData, 'monthly')
-)
+})
 
-// Global variable for time-tracking data
+weeklyBtn.addEventListener('click', () => {
+  setSelectedBtn(weeklyBtn)
+  displayTrackingData(trackingData, 'weekly')
+})
+
+monthlyBtn.addEventListener('click', () => {
+  setSelectedBtn(monthlyBtn)
+  displayTrackingData(trackingData, 'monthly')
+})
+
+// Global variable(s)
 let trackingData
 
-// Fetch time-tracking data and display weekly stats by default
+// Fetch local data
 fetch('data.json')
   .then(resp => resp.json())
   .then(data => {
@@ -27,7 +32,15 @@ fetch('data.json')
   })
   .catch(errMsg => console.error(errMsg))
 
-// Function to display time-tracking data for the selected time
+// functions
+function setSelectedBtn(timeframeBtn) {
+  const timeframeBtns = [dailyBtn, weeklyBtn, monthlyBtn]
+  timeframeBtns.forEach(btn => {
+    btn.classList.remove('selected-btn')
+  })
+  timeframeBtn.classList.add('selected-btn')
+}
+
 function displayTrackingData(trackingData, timeframe) {
   if (!trackingData) return
 
@@ -78,10 +91,13 @@ function displayTrackingData(trackingData, timeframe) {
 
       return `
               <section class="tracking-card" id=${idTitle(title)}>
-                
-                ${cardTitle}
-                ${currentTimeframe}
-                ${previousTimeframe}
+                <div class="card-content">
+                  ${cardTitle}
+                  <div class="timeframes">
+                    ${currentTimeframe}
+                    ${previousTimeframe}
+                  </div>
+                </div>
               </section>
           `
     })
