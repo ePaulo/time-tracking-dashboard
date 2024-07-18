@@ -225,7 +225,7 @@ main.time-tracking-cards {
 /* ========================== */
 /* ====== LARGE SCREENS ===== */
 /* ========================== */
-/* add media query for larger screens */
+
 @media (min-width: 870px) {
   div.app-container {
     width: auto;
@@ -236,7 +236,7 @@ main.time-tracking-cards {
   /* ===== Header [desktop] ===== */
   header.time-tracking-user {
     width: 255px;
-    height: 518px;
+    max-height: 501px;
     align-self: start;
 
     /* ----- User Intro [desktop] ----- */
@@ -270,10 +270,7 @@ main.time-tracking-cards {
 
   /* ===== Main Content [desktop] ===== */
   main.time-tracking-cards {
-    /* grid-template-columns: repeat(3, 255px); */
-    /* 3 or 2 rows and 2 or 3 columns depending on width */
     grid-template-columns: repeat(auto-fill, 255px);
-    /* first row, first column height is always 518px */
 
     /* ----- Tracking Card [desktop] ----- */
     section.tracking-card {
