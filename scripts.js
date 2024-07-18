@@ -21,16 +21,44 @@ monthlyBtn.addEventListener('click', () => {
 })
 
 // Global variable(s)
-let trackingData
+let trackingData = [
+  {
+    title: 'Work',
+    timeframes: {
+      daily: {
+        current: 5,
+        previous: 7,
+      },
+      weekly: {
+        current: 32,
+        previous: 36,
+      },
+      monthly: {
+        current: 103,
+        previous: 128,
+      },
+    },
+  },
+  {
+    title: 'Play',
+    timeframes: {
+      daily: {
+        current: 1,
+        previous: 2,
+      },
+      weekly: {
+        current: 10,
+        previous: 8,
+      },
+      monthly: {
+        current: 23,
+        previous: 29,
+      },
+    },
+  },
+]
 
-// Fetch local data
-fetch('data.json')
-  .then(resp => resp.json())
-  .then(data => {
-    trackingData = data
-    displayTrackingData(trackingData, 'weekly')
-  })
-  .catch(errMsg => console.error(errMsg))
+displayTrackingData(trackingData, 'weekly')
 
 // functions
 function setSelectedBtn(timeframeBtn) {
