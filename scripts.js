@@ -58,6 +58,7 @@ let trackingData = [
   },
 ]
 
+// Initial display
 displayTrackingData(trackingData, 'weekly')
 
 // functions
