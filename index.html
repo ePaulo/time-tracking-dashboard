@@ -35,13 +35,56 @@
           </h1>
         </div>
         <nav class="timeframes">
-          <button class="timeframe" id="daily-btn">Daily</button>
-          <button class="timeframe selected-btn" id="weekly-btn">Weekly</button>
-          <button class="timeframe" id="monthly-btn">Monthly</button>
+          <button class="timeframe">Daily</button>
+          <button class="timeframe selected-btn">Weekly</button>
+          <button class="timeframe">Monthly</button>
         </nav>
       </header>
       <!-- main content created with JavaScript -->
-      <main class="time-tracking-cards" id="tracking-content"></main>
+      <main class="time-tracking-cards">
+        <!-- example of a Work time card for a week -->
+        <section class="tracking-card">
+          <div class="card-content">
+            <div class="card-intro">
+              <h2 class="card-title">Work</h2>
+              <img
+                class="ellipsis-icon"
+                src="images/icon-ellipsis.svg"
+                alt="ellipsis"
+              />
+            </div>
+            <div class="timeframes">
+              <div class="current-timeframe">
+                <p class="weekly">32hrs</p>
+              </div>
+              <div class="previous-timeframe">
+                <p class="weekly">36hrs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- example of a Play time card for a week -->
+        <section class="tracking-card">
+          <div class="card-content">
+            <div class="card-intro">
+              <h2 class="card-title">Play</h2>
+              <img
+                class="ellipsis-icon"
+                src="images/icon-ellipsis.svg"
+                alt="ellipsis"
+              />
+            </div>
+            <div class="timeframes">
+              <div class="current-timeframe">
+                <p class="weekly">10hrs</p>
+              </div>
+              <div class="previous-timeframe">
+                <p class="weekly">8hrs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <footer class="attribution">
