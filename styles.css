@@ -42,8 +42,8 @@ div.app-container {
   margin: 5.6rem auto 2rem;
   padding: 2.4rem;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   gap: 2.4rem;
   justify-content: center;
   align-items: center;
@@ -120,8 +120,8 @@ header.time-tracking-user {
 /* ===== Main Content [mobile] ===== */
 main.time-tracking-cards {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(6, auto);
   gap: 2.4rem;
 
   /* ----- Tracking Card [mobile] ----- */
@@ -168,7 +168,7 @@ main.time-tracking-cards {
 
     /* ---- Tracking Card Content [mobile] */
     div.card-content {
-      height: 12rem;
+      height: 122px;
       margin-top: 3.8rem;
       padding: 2.8rem 2.4rem;
       border-radius: 1.5rem;
@@ -226,19 +226,18 @@ main.time-tracking-cards {
 /* ====== LARGE SCREENS ===== */
 /* ========================== */
 /* add media query for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 870px) {
   div.app-container {
-    width: 1110px;
-    height: 518px;
-
-    flex-direction: row;
-    align-items: start;
-  }
+    width: auto;
+    max-width: 1150px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 255px 1fr;
 
   /* ===== Header [desktop] ===== */
   header.time-tracking-user {
     width: 255px;
-    height: 100%;
+    height: 518px;
+    align-self: start;
 
     /* ----- User Intro [desktop] ----- */
     div.user-intro {
@@ -266,6 +265,34 @@ main.time-tracking-cards {
       flex-direction: column;
       align-items: start;
       gap: 2rem;
+    }
+  }
+
+  /* ===== Main Content [desktop] ===== */
+  main.time-tracking-cards {
+    /* grid-template-columns: repeat(3, 255px); */
+    /* 3 or 2 rows and 2 or 3 columns depending on width */
+    grid-template-columns: repeat(auto-fill, 255px);
+    /* first row, first column height is always 518px */
+
+    /* ----- Tracking Card [desktop] ----- */
+    section.tracking-card {
+      /* ---- Tracking Card Content [desktop] */
+      div.card-content {
+        width: 255px;
+        height: 200px;
+
+        div.timeframes {
+          margin-top: 2.4rem;
+          flex-direction: column;
+          align-items: start;
+          gap: 0.5rem;
+
+          div.current-timeframe {
+            font-size: 5.6rem;
+          }
+        }
+      }
     }
   }
 }
