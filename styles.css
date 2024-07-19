@@ -34,9 +34,10 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
 }
-/* ========================== */
+
+/* =========================== */
 /* ====== MOBILE SCREENS ===== */
-/* ========================== */
+/* =========================== */
 div.app-container {
   width: 375px;
   margin: 5.6rem auto 2rem;
@@ -51,7 +52,8 @@ div.app-container {
 
 /* ===== Header [mobile] ===== */
 header.time-tracking-user {
-  width: 100%;
+  width: 327px;
+  height: 203px;
   background-color: var(--color-dark-blue);
   border-radius: 1.5rem;
 
@@ -60,7 +62,8 @@ header.time-tracking-user {
 
   /* ----- User Intro [mobile] ----- */
   div.user-intro {
-    padding: 3.5rem 0 3.2rem 3.5rem;
+    height: 133px;
+    padding: 3rem 0 3rem 2.8rem;
     border-radius: 1.5rem;
     background-color: var(--color-blue);
 
@@ -95,9 +98,9 @@ header.time-tracking-user {
 
   /* ----- Timeframes Nav [mobile] ----- */
   nav.timeframes {
-    padding: 2.5rem 0;
+    padding: 2.5rem 2.8rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     button.timeframe {
       color: var(--color-desaturated-blue);
@@ -129,7 +132,7 @@ main.time-tracking-cards {
     border-radius: 1.5rem;
     background-repeat: no-repeat;
 
-    /* ----- Set Tracking Background Image */
+    /* ----- Set Card's Background Image */
     &#work {
       background-color: var(--color-work--light-red);
       background-image: url(images/icon-work.svg);
@@ -170,7 +173,7 @@ main.time-tracking-cards {
     div.card-content {
       height: 122px;
       margin-top: 3.8rem;
-      padding: 2.8rem 2.4rem;
+      padding: 2.8rem;
       border-radius: 1.5rem;
       background-color: var(--color-dark-blue);
       cursor: pointer;
@@ -223,6 +226,20 @@ main.time-tracking-cards {
 }
 
 /* ========================== */
+/* ====== SHARED FOOTER ===== */
+/* ========================== */
+footer.attribution {
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: var(--color-pale-blue);
+  text-align: center;
+
+  a {
+    color: var(--color-desaturated-blue);
+  }
+}
+
+/* ========================== */
 /* ====== LARGE SCREENS ===== */
 /* ========================== */
 
@@ -232,17 +249,18 @@ main.time-tracking-cards {
     max-width: 1150px;
     grid-template-rows: 1fr;
     grid-template-columns: 255px 1fr;
+  }
 
   /* ===== Header [desktop] ===== */
   header.time-tracking-user {
     width: 255px;
-    max-height: 501px;
+    height: 501px;
     align-self: start;
 
     /* ----- User Intro [desktop] ----- */
     div.user-intro {
       height: 354px;
-      padding: 2.8rem 2.5rem;
+      padding: 3.6rem 3.2rem;
 
       flex-direction: column;
       align-items: start;
@@ -254,14 +272,14 @@ main.time-tracking-cards {
       }
 
       h1.user-title {
-        font-size: 3.2rem;
+        font-size: 4rem;
         line-height: 1.25;
       }
     }
 
     /* ----- Timeframes Nav [desktop] ----- */
     nav.timeframes {
-      padding: 2.5rem;
+      padding: 3.2rem;
       flex-direction: column;
       align-items: start;
       gap: 2rem;
@@ -278,6 +296,7 @@ main.time-tracking-cards {
       div.card-content {
         width: 255px;
         height: 200px;
+        padding: 2.8rem 3.2rem;
 
         div.timeframes {
           margin-top: 2.4rem;
@@ -291,19 +310,5 @@ main.time-tracking-cards {
         }
       }
     }
-  }
-}
-
-/* ========================== */
-/* ====== SHARED FOOTER ===== */
-/* ========================== */
-footer.attribution {
-  margin-bottom: 1em;
-  font-size: 1rem;
-  color: var(--color-pale-blue);
-  text-align: center;
-
-  a {
-    color: var(--color-desaturated-blue);
   }
 }
